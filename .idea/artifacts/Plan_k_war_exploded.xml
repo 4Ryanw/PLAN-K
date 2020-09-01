@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="Plan-k:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/Plan_k_war_exploded</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="Plan-k" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="Plan-k/web/Web" />
+    </root>
+  </artifact>
+</component>
