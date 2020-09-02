@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class jdbcConnection {
+public class JdbcConnection {
     public static void main(String[] args) throws SQLException {
 
         Connection conn = getconnection();
@@ -27,9 +27,11 @@ public class jdbcConnection {
             e.printStackTrace();
         }
         //建立获取连接
-        String url = "jdbc:mysql://149.129.48.96:3306/PLAN-K?characterEncoding=UTF-8";
+        //String url = "jdbc:mysql://149.129.48.96:3306/PLAN-K?characterEncoding=UTF-8";
+        String url = "jdbc:mysql://localhost:3306/PLAN-K?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=UTF-8";
         String user = "root";
-        String pwd = "Aa@314184417";
+        //String pwd = "Aa@314184417";
+        String pwd = "123456";
         try{
             System.out.println("创建数据库连接...");
             System.out.println("url:"+url);
@@ -37,6 +39,8 @@ public class jdbcConnection {
             System.out.println("创建连接成功！");
         }catch (SQLException e){
             System.out.println("连接SQLException异常...");
+            e.printStackTrace();
+            return null;
         }
         return  conn;
     }

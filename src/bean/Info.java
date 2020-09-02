@@ -22,4 +22,9 @@ public class Info {
     public void setPhoto(String photo) {
         this.photo = photo;
     }
+
+    public Info(String name, String photo) {
+        this.name = name;
+        this.photo = photo;
+    }
 }

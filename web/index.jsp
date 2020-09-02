@@ -17,8 +17,14 @@
  <h1>凯计划实施中 ing...</h1>
  <div style="margin: auto;width:50%;">
    <h3 style="margin-left: 10rem;">你选择的文件<span style="margin-left: 3rem">↓👇↓</span></h3>
-   <input style="margin-left: 15rem;" type = "file" id="myFile" />
-   <button onclick="alert('爷还没做完呢你提交你妈？')"> 提交 </button>
+
+
+     <form action="/Upload" enctype="multipart/form-data" method="post">
+         <input style="margin-left: 15rem;" type="file" name="pic">
+         <input type="submit" value="提交文件"> <span>${requestScope.success}<br></span>
+     </form>
+
+
  </div>
 
 
