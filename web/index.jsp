@@ -16,13 +16,14 @@
   <body>
  <h1>凯计划实施中 ing...</h1>
  <div style="margin: auto;width:50%;">
-   <h3 style="margin-left: 10rem;">你选择的文件<span style="margin-left: 3rem">↓👇↓</span></h3>
+   <h3 style="margin-left: 5rem;">你选择的文件<span style="margin-left: 3rem">↓👇↓</span></h3>
 
 
      <form action="/Upload" enctype="multipart/form-data" method="post">
-         <input style="margin-left: 15rem;" type="file" name="pic">
-         <input type="submit" value="提交文件"> <span>${requestScope.success}<br></span>
+         <input style="margin-left: 10rem;" type="file" name="pic">
+         <input type="submit" value="提交文件">
      </form>
+
 
 
  </div>

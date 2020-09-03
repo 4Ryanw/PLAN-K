@@ -27,11 +27,11 @@ public class JdbcConnection {
             e.printStackTrace();
         }
         //建立获取连接
-        //String url = "jdbc:mysql://149.129.48.96:3306/PLAN-K?characterEncoding=UTF-8";
-        String url = "jdbc:mysql://localhost:3306/PLAN-K?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=UTF-8";
+        String url = "jdbc:mysql://149.129.48.96:3306/PLAN-K?characterEncoding=UTF-8";
+//        String url = "jdbc:mysql://localhost:3306/PLAN-K?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=UTF-8";
         String user = "root";
-        //String pwd = "Aa@314184417";
-        String pwd = "123456";
+        String pwd = "Aa@314184417";
+//        String pwd = "123456";
         try{
             System.out.println("创建数据库连接...");
             System.out.println("url:"+url);

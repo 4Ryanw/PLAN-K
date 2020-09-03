@@ -9,6 +9,7 @@ import java.io.File;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -46,6 +47,9 @@ public class ImportExcel {
 
         Connection conn = JdbcConnection.getconnection();//获取连接
 
+        String sql_Trun = "Truncate table t_daily";
+        Statement s = conn.createStatement();
+        s.execute(sql_Trun);
         for (Info info : listExcel) {
                 String sql = "INSERT INTO t_daily VALUES (NULL,?,?,CURRENT_DATE)";
                 String[] str = new String[]{info.getName(), info.getPhoto()};
@@ -57,6 +61,7 @@ public class ImportExcel {
                     }
                 }
                 pst.executeUpdate();
+                pst.close();
             } catch (SQLException e) {
                 e.printStackTrace();
                 return;

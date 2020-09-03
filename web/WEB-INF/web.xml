@@ -11,4 +11,13 @@
         <servlet-name>UploadServlet</servlet-name>
         <url-pattern>/Upload</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>StasticServlet</servlet-name>
+        <servlet-class>controller.StasticServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StasticServlet</servlet-name>
+        <url-pattern>/Stastic</url-pattern>
+    </servlet-mapping>
 </web-app>

@@ -1,5 +1,6 @@
 package controller;
 
+import bean.Result;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
@@ -13,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -47,6 +49,11 @@ public class UploadServlet extends HttpServlet {
                     String uuid= UUID.randomUUID().toString();
                     //获取文件后缀名
                     String suffix=filName.substring(filName.lastIndexOf("."));
+                    if(!suffix.equals(".xls")){
+                        request.setAttribute("success","格式错了你吗的傻狗！");
+                        request.getRequestDispatcher("index.jsp").forward(request,response);
+                        return;
+                    }
 
                     //获取文件上传目录路径，在项目部署路径下的upload目录里。若想让浏览器不能直接访问到图片，可以放在WEB-INF下
                     String uploadPath=request.getSession().getServletContext().getRealPath("/upload");
@@ -59,9 +66,7 @@ public class UploadServlet extends HttpServlet {
 
                     ImportExcel.importMysql(uploadPath+"\\"+uuid+suffix);
 
-                    request.setAttribute("success","提交成功！");
-
-                    request.getRequestDispatcher("index.jsp").forward(request,response);
+                    request.getRequestDispatcher("successPage.jsp").forward(request,response);
 
 
                 }
