@@ -64,7 +64,7 @@ public class UploadServlet extends HttpServlet {
                     //写入文件到磁盘，该行执行完毕后，若有该临时文件，将会自动删除
                     fileItem.write(new File(uploadPath,uuid+suffix));
 
-                    ImportExcel.importMysql(uploadPath+"\\"+uuid+suffix);
+                    ImportExcel.importMysql(uploadPath+"/"+uuid+suffix);
 
                     request.getRequestDispatcher("successPage.jsp").forward(request,response);
 

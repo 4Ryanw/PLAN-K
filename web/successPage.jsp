@@ -47,8 +47,8 @@
 
 <h1>上传成功</h1>
 <div>
-    <button style="margin-right: 4rem" onclick="window.location.href='/'">《返回</button>
-    <button onclick="window.location.href='/Stastic'">统计</button>
+    <button style="margin-right: 4rem" onclick="window.location.href='index.jsp'">《返回</button>
+    <button onclick="window.location.href='Stastic'">统计</button>
 </div>
 <table id="table1" class="gridtable">
     <tr>
